@@ -3,37 +3,130 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RandomCharacterGenerator"
+        xmlns:local="clr-namespace:RandomCharacterGenerator" 
+        xmlns:avalondock="https://github.com/Dirkster99/AvalonDock"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800 ">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="16" />
+        </Grid.RowDefinitions>
         <!--<Button Content="Open Table List" HorizontalAlignment="Left" Margin="407,182,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click"/>
         <Menu HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>-->
         <Menu>
             <MenuItem Header="_File">
+                <MenuItem Click="NewTable" Header="New Table" />
             </MenuItem>
             <MenuItem Header="_Edit">
                 <MenuItem Command="ApplicationCommands.Copy"/>
                 <MenuItem Command="ApplicationCommands.Cut"/>
                 <MenuItem Command="ApplicationCommands.Paste"/>
             </MenuItem>
+            <MenuItem Header="_Table">
+                <MenuItem Click="AddNewRow" Header="Add Row" />
+            </MenuItem>
         </Menu>
-        <DockPanel HorizontalAlignment="Left" Height="381" LastChildFill="False" VerticalAlignment="Top" Width="150" Margin="0,28,0,0">
-            <TreeView x:Name="foldersItem" SelectedItemChanged="foldersItem_SelectedItemChanged" Width="Auto" Background="#FFFFFFFF"  BorderBrush="#FFFFFFFF" Foreground="#FFFFFFFF" >
-                <TreeView.Resources>
-                    <Style TargetType="{x:Type TreeViewItem}">
-                        <Setter Property="HeaderTemplate"> 
-                            <Setter.Value>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding}" Margin="5,0" />
-                                    </StackPanel>
-                                </DataTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </TreeView.Resources>
-            </TreeView>
-        </DockPanel>
+        <Grid Grid.Row="1">
+            <avalondock:DockingManager x:Name="dockingManager" AllowMixedOrientation="True">
+                <avalondock:LayoutRoot>
+                    <avalondock:LayoutPanel Orientation="Horizontal">
+                        <avalondock:LayoutAnchorablePaneGroup  DockWidth="200">
+                            <avalondock:LayoutAnchorablePane>
+                                <avalondock:LayoutAnchorable Title="FileExploer">
+                                    <TreeView x:Name="foldersItem" SelectedItemChanged="foldersItem_SelectedItemChanged" Width="Auto" Background="#FFFFFFFF"  BorderBrush="#FFFFFFFF" Foreground="#FFFFFFFF" >
+                                        <TreeView.Resources>
+                                            <Style TargetType="{x:Type TreeViewItem}">
+                                                <Setter Property="HeaderTemplate">
+                                                    <Setter.Value>
+                                                        <DataTemplate>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="{Binding}" Margin="5,0" />
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </TreeView.Resources>
+                                    </TreeView>
+                                </avalondock:LayoutAnchorable>
+                            </avalondock:LayoutAnchorablePane>
+                        </avalondock:LayoutAnchorablePaneGroup>
+                        <avalondock:LayoutDocumentPaneGroup>
+                            <avalondock:LayoutDocumentPane>
+                                <avalondock:LayoutDocument Title="TableDocument">
+                                    <FlowDocument x:Name="TableDocument">
+                                        <FlowDocument.Resources>
+                                            <Style TargetType="TableCell">
+                                                <Setter Property="BorderBrush" Value="Black"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1" />
+                                            </Style>
+                                        </FlowDocument.Resources>
+                                        <Table>
+                                            <Table.Columns>
+                                                <TableColumn/>
+                                                <TableColumn/>
+                                                <TableColumn/>
+                                                <TableColumn/>
+                                            </Table.Columns>
+
+                                            <TableRowGroup>
+                                                <TableRow>
+                                                    <TableCell/>
+                                                    <TableCell>
+                                                        <Paragraph>Gizmos</Paragraph>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Paragraph>Thingamajigs</Paragraph>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Paragraph>Doohickies</Paragraph>
+                                                    </TableCell>
+                                                </TableRow>
+                                            </TableRowGroup>
+                                            <TableRowGroup>
+                                                <TableRow>
+                                                    <TableCell>
+                                                        <Paragraph Foreground="Blue">Blue</Paragraph>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Paragraph>1</Paragraph>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Paragraph>2</Paragraph>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Paragraph>3</Paragraph>
+                                                    </TableCell>
+                                                </TableRow>
+                                                <TableRow>
+                                                    <TableCell>
+                                                        <Paragraph Foreground="Red">Red</Paragraph>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Paragraph>1</Paragraph>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Paragraph>2</Paragraph>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Paragraph>3</Paragraph>
+                                                    </TableCell>
+                                                </TableRow>
+                                            </TableRowGroup>
+                                        </Table>
+                                    </FlowDocument>
+                                </avalondock:LayoutDocument>
+                            </avalondock:LayoutDocumentPane>
+                        </avalondock:LayoutDocumentPaneGroup>
+                    </avalondock:LayoutPanel>
+                </avalondock:LayoutRoot>
+            </avalondock:DockingManager>
+        </Grid>
+       
+        <!--<DockPanel HorizontalAlignment="Left" Height="381" LastChildFill="False" VerticalAlignment="Top" Width="150" Margin="0,28,0,0">
+            
+        </DockPanel>-->
     </Grid>
 </Window>
