@@ -5,9 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RandomCharacterGenerator"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
-    <Grid>
-        <Label Content="laasd&#xD;&#xA;" HorizontalAlignment="Left" Margin="51,65,0,0" VerticalAlignment="Top" Width="120"/>
+        Title="Window1" Height="867" Width="1214">
+    <Grid HorizontalAlignment="Center" Width="1092" Margin="0,10,0,27">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1075*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Gender&#xA;" HorizontalAlignment="Left" Margin="160,51,0,0" VerticalAlignment="Top" Width="120" Height="42"/>
+        <Image HorizontalAlignment="Left" Height="27" Margin="128,51,0,0" VerticalAlignment="Top" Width="38" Source="/bigender.png"/>
+        <Image HorizontalAlignment="Left" Height="28" Margin="120,302,0,0" VerticalAlignment="Top" Width="38" Source="/humor.png"/>
+        <Label Content="Personality&#xA;" HorizontalAlignment="Left" Margin="152,302,0,0" VerticalAlignment="Top" Width="120" Height="42"/>
+        <Image HorizontalAlignment="Left" Height="27" Margin="477,57,0,0" VerticalAlignment="Top" Width="38" Source="/map.png"/>
+        <Label Content="Location&#xA;" HorizontalAlignment="Left" Margin="504,57,0,0" VerticalAlignment="Top" Width="120" Height="42"/>
+        <ComboBox HorizontalAlignment="Left" Margin="99,91,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <ComboBox HorizontalAlignment="Left" Margin="99,197,0,0" VerticalAlignment="Top" Width="113" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Voice" HorizontalAlignment="Left" Margin="99,166,0,0" VerticalAlignment="Top" Height="26" Width="38"/>
+        <ComboBox HorizontalAlignment="Left" Margin="95,431,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <ComboBox HorizontalAlignment="Left" Margin="95,343,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <ComboBox HorizontalAlignment="Left" Margin="451,126,0,0" VerticalAlignment="Top" Width="125" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <GroupBox HorizontalAlignment="Left" Height="342" Header="Personality info" Margin="78,381,0,0" VerticalAlignment="Top" Width="194"/>
+        <ComboBox HorizontalAlignment="Left" Margin="454,210,0,0" VerticalAlignment="Top" Width="112" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Cloth" HorizontalAlignment="Left" Margin="455,184,0,0" VerticalAlignment="Top" Height="26" Width="109"/>
+        <ComboBox HorizontalAlignment="Left" Margin="583,210,0,0" VerticalAlignment="Top" Width="112" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="583,184,0,0" VerticalAlignment="Top" Height="26" Width="112"/>
+        <ComboBox HorizontalAlignment="Left" Margin="600,126,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Continent" HorizontalAlignment="Left" Margin="451,99,0,0" VerticalAlignment="Top" Height="26" Width="125"/>
+        <Label Content="Country" HorizontalAlignment="Left" Margin="600,100,0,0" VerticalAlignment="Top" Height="26" Width="152"/>
+        <ComboBox HorizontalAlignment="Left" Margin="714,210,0,0" VerticalAlignment="Top" Width="112" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Belief" HorizontalAlignment="Left" Margin="714,184,0,0" VerticalAlignment="Top" Height="26" Width="112"/>
+        <ComboBox HorizontalAlignment="Left" Margin="836,210,0,0" VerticalAlignment="Top" Width="112" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Age" HorizontalAlignment="Left" Margin="836,184,0,0" VerticalAlignment="Top" Height="26" Width="112"/>
+        <ComboBox HorizontalAlignment="Left" Margin="515,312,0,0" VerticalAlignment="Top" Width="140" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Job" HorizontalAlignment="Left" Margin="515,286,0,0" VerticalAlignment="Top" Height="26" Width="28"/>
+        <ComboBox HorizontalAlignment="Left" Margin="533,391,0,0" VerticalAlignment="Top" Width="98" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Working Location" HorizontalAlignment="Left" Margin="533,366,0,0" VerticalAlignment="Top" Height="25" Width="102"/>
+        <ComboBox HorizontalAlignment="Left" Margin="533,465,0,0" VerticalAlignment="Top" Width="98" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Income" HorizontalAlignment="Left" Margin="533,440,0,0" VerticalAlignment="Top" Height="25" Width="102"/>
+        <ComboBox HorizontalAlignment="Left" Margin="533,546,0,0" VerticalAlignment="Top" Width="98" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="House" HorizontalAlignment="Left" Margin="533,521,0,0" VerticalAlignment="Top" Height="25" Width="102"/>
+        <ComboBox HorizontalAlignment="Left" Margin="533,635,0,0" VerticalAlignment="Top" Width="98" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Cloth" HorizontalAlignment="Left" Margin="533,610,0,0" VerticalAlignment="Top" Height="25" Width="102"/>
+        <GroupBox HorizontalAlignment="Left" Height="339" Header="Sub Info" Margin="515,344,0,0" VerticalAlignment="Top" Width="142"/>
+        <GroupBox HorizontalAlignment="Left" Height="435" Header="Life" Margin="469,269,0,0" VerticalAlignment="Top" Width="234"/>
+        <GroupBox Height="711" Header="Location Info" Margin="369,26,0,0" VerticalAlignment="Top" BorderBrush="#FF3EA5E4" HorizontalAlignment="Left" Width="667"/>
+        <GroupBox HorizontalAlignment="Left" Height="468" Header="Persona Info" Margin="46,269,0,0" VerticalAlignment="Top" Width="260" BorderBrush="#FFDEBD22"/>
+        <GroupBox HorizontalAlignment="Left" Height="223" Header="Gender Info" Margin="46,26,0,0" VerticalAlignment="Top" Width="260" BorderBrush="#FFE43E3E"/>
+        <ComboBox HorizontalAlignment="Left" Margin="749,312,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="ComboBox_SelectionChanged" IsDropDownOpen="True" IsEditable="True" Height="22"/>
+        <Label Content="Family Name" HorizontalAlignment="Left" Margin="749,286,0,0" VerticalAlignment="Top" Height="26" Width="112"/>
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="749,354,187,131">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <GroupBox HorizontalAlignment="Left" Height="435" Header="Family Info" Margin="725,269,0,0" VerticalAlignment="Top" Width="214"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="46,782,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="498"/>
+        <Button Content="Randomize" HorizontalAlignment="Left" Height="22" Margin="564,782,0,0" VerticalAlignment="Top" Width="131" Background="#FFF5E4B4"/>
+        <Button Content="Generate from" HorizontalAlignment="Left" Height="22" Margin="714,782,0,0" VerticalAlignment="Top" Width="131" BorderBrush="#FF707070" Background="#FFEAEAEA"/>
+        <Button Content="Save" HorizontalAlignment="Left" Height="22" Margin="860,782,0,0" VerticalAlignment="Top" Width="130" Background="#FFEAEAEA"/>
 
     </Grid>
 </Window>
